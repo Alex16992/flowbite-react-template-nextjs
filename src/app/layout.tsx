@@ -1,11 +1,10 @@
 import { ThemeModeScript } from "flowbite-react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeInit } from "../../.flowbite-react/init";
+import { Rubik, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const FontRubik = Rubik({
+  variable: "--font-rubik",
   subsets: ["latin"],
 });
 
@@ -30,9 +29,8 @@ export default function RootLayout({
         <ThemeModeScript />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${FontRubik.variable} ${geistMono.variable} flex w-full flex-col items-center antialiased dark:bg-gray-900 dark:text-white`}
       >
-        <ThemeInit />
         {children}
       </body>
     </html>
